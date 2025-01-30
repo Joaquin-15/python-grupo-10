@@ -10,3 +10,6 @@ def get_user(id: int):
 
 def create_user(user: dict) -> None:
     users.append(user)
+    
+def get_users():
+    return users
