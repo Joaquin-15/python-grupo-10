@@ -47,15 +47,15 @@ def resta(a, b):
 # print(suma(9,8))
 
 # Argumentos nombrados
-print(resta(4,3))
-print(resta(3,4))
-print(resta(b=3,a=4)) # Argumentos nombrados en diferente orden.
+# print(resta(4,3))
+# print(resta(3,4))
+# print(resta(b=3,a=4)) # Argumentos nombrados en diferente orden.
 
 # Funciones lambda: Las funciones lambda son pequeñas funciones anonimas que se definen con la palñabra clave lambda
 
 multiplicar = lambda a, b: a * b
 
-print(f"El resultado de la multiplicacion es: {multiplicar(3,3)}")
+# print(f"El resultado de la multiplicacion es: {multiplicar(3,3)}")
 
 def contador(maximo):
     count = 1
@@ -64,9 +64,40 @@ def contador(maximo):
         print(count)
         # count += 1
 
-contador(10)
+# contador(10)
 
 # Puntos para la proxima clase
 # 1. Decoradores
 # 2. Recursividad || MIEDO
 # 3. Modulos
+
+
+#  Recursividad:
+# 1. Caso Base: Es la condicion que detiene la recursividad, Sin un caso base, la funcion se estaria llamando a si misma indefinidamente.
+# 2. Caso recursivo.
+
+# El factorial de un número n (denotado como n!) es el producto de todos los enteros positivos desde 1 hasta n.
+
+# 5! = 5 x 4 x 3 x 2 x 1 = 120
+
+# Solucion Iterativa ( sin recursividad )
+
+def factorial_iterativo(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+        print(result)
+    print(f"{result}")
+    
+# factorial_iterativo(5)
+
+# Solucion Recursiva:
+def factorial_recursivo(n):
+    # Caso Base
+    if n == 0 or n == 1:
+        return 1
+    # Caso Recursivo
+    else:
+        return n * factorial_recursivo(n - 1)
+
+print(factorial_recursivo(5))
